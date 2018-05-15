@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+
+    .select1.selected, .select2.selected, .select3.selected, .select4.selected, .select5.selected, .select6.selected{
+      background-color:yellow;
+    }
+
+
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="select1">HTML</li>
+      <li class="select2">CSS</li>
+      <li class="select3">Javascript</li>
+      <li class="select4">jQuery</li>
+      <li class="select5">PHP</li>
+      <li class="select6">MySQL</li>
+    </ul>
+
+    <button type="button" id="btn1">HTML</button>
+    <button type="button" id="btn2">CSS</button>
+    <button type="button" id="btn3">Javascript</button>
+    <button type="button" id="btn4">jQuery</button>
+    <button type="button" id="btn5">PHP</button>
+    <button type="button" id="btn6">MySQL</button>
+
+    <button type="button" id="btn7">Reset</button>
+
+
+
+<script>
+
+$('#btn1').click(function(){
+
+    $('.select1').addClass('selected');
+
+});
+
+$('#btn2').click(function(){
+
+    $('.select2').addClass('selected');
+
+});
+
+$('#btn3').click(function(){
+
+    $('.select3').addClass('selected');
+
+});
+
+$('#btn4').click(function(){
+
+    $('.select4').addClass('selected');
+
+});
+
+$('#btn5').click(function(){
+
+    $('.select5').addClass('selected');
+
+});
+
+$('#btn6').click(function(){
+
+    $('.select6').addClass('selected');
+
+});
+
+
+$('#btn7').click(function(){
+
+    $('li').removeClass('selected');
+
+});
+
+
+
+
+
+
+
+</script>
+
+  </body>
+</html>
