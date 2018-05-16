@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-3.3.1.js"></script>
+  </head>
+  <body>
+
+    <input id="btn1" type="button" value="bind"/>
+    <input id="btn2" type="button" value="unbind"/>
+    <input id="btn3" type="button" value="trigger"/>
+
+<script>
+
+function clickHandler(e){
+  alert('Hello~');
+}
+
+// bind()는 새로운 이벤트를 설치
+// unbind()는 설치되어있는 이벤트를 제거
+// trigger()는 이벤트를 호출
+
+// 현재 bind와 unbind는 Deprecated(더이상 사용되지 않는)되었다
+$(function(){
+
+// btn1을 클릭하면 새로운 이벤트가 설치된다
+// 그 이벤트의 내용은 클릭했을때 clickHandler가 실행된다
+$('#btn1').bind('click',clickHandler);
+
+// btn2를 클릭하면 새로운 이벤트가 설치된다
+// 그 이벤트의 내용은 btn1에 있는 이벤트를 제거하는 것이다
+// 이벤트를 제거하는 unbind를 쓸때는 bind할때 당시의 선언 그대로를 써줘야한다
+$('#btn2').bind('click',function(e){
+
+  $('#btn1').unbind('click',clickHandler);
+
+});
+
+// btn3을 클릭하면 새로운 이벤트가 설치된다
+// 그 이벤트의 내용은 btn1에 있는 클릭했을때의 이벤트를 호출한다
+// trigger의 인자값으로 'click'을 주면 클릭했을때의 이벤트 내용을 가져온다
+$('#btn3').bind('click',function(e){
+  $('#btn1').trigger('click',clickHandler);
+})
+
+
+
+});
+
+
+
+
+</script>
+  </body>
+</html>

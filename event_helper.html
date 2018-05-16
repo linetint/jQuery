@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-3.3.1.js"></script>
+  </head>
+  <body>
+
+    <input id="btn1" type="button" value="bind"/>
+    <input id="btn2" type="button" value="unbind"/>
+    <input id="btn3" type="button" value="trigger"/>
+
+<script>
+
+function clickHandler(e){
+  alert('Hello~');
+}
+
+// bind()는 새로운 이벤트를 설치
+// unbind()는 설치되어있는 이벤트를 제거
+// trigger()는 이벤트를 호출
+
+// event_helper는 앞에 event와 내용은 같으나 뒤에 붙은 helper처럼 좀더 간결하게 쓸수 있는 방식이다
+$(function(){
+
+$('#btn1').click(clickHandler);
+
+$('#btn2').click(function(e){
+  $('#btn1').unbind('click',clickHandler);
+});
+
+$('#btn3').click(function(e){
+  $('#btn1').trigger('click',clickHandler);
+});
+
+
+
+
+
+});
+
+
+
+
+</script>
+  </body>
+</html>

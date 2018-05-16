@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-3.3.1.js"></script>
+  </head>
+  <body>
+
+<ul class="first">
+  <li class="foo">list item1</li>
+  <li>list item2</li>
+  <li class="bar">list item3</li>
+</ul>
+
+<ul class="second">
+  <li class="foo">list item1</li>
+  <li>list item2</li>
+  <li class="bar">list item3</li>
+</ul>
+
+
+<script>
+
+// .find()는 해당 선택자를 찾을때 사용하는데 지금처럼 사용할때는 처음 지정된 .first라는 체인을 .foo로 바꿀때도 사용된다
+// 즉 체인 컨텍스트가 내부적으로 변경된 것이다(바로 이러한 기법을 traversing(탐색)이라고 한다)
+$('.first').find('.foo').css('background-color','red').end().find('.bar').css('background-color','blue');
+
+// end()메소드는 체인 컨텍스트를 유지하다가 end메소드를 만나면 마지막으로 사용한 트래버스를 취소하게 된다
+// 즉 마지막으로 사용한 체인 컨텍스트를 취소한다는 의미이다
+// 전에 사용한 체인 컨텍스트를 취소하기때문에 그 체인을 사용하기 전의 체인으로 변경한다는 것이다
+
+
+
+</script>
+  </body>
+</html>

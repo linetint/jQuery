@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-3.3.1.js"></script>
+  </head>
+  <body>
+
+    <input id="btn1" type="button" value="bind"/>
+    <input id="btn2" type="button" value="unbind"/>
+    <input id="btn3" type="button" value="trigger"/>
+
+<script>
+
+function clickHandler(e){
+  alert('Hello~');
+}
+
+
+
+// live는 화면상에 아직 존재하지 않는 엘리먼트에 대해서 이벤트를 미리 설치할수 있다
+// live()는 bind와 동일하고 die()는 unbind와 동일한 기능이다
+// 하지만 일반적인 경우에는 live와 die보다는 bind,unbind를 쓰거나 아니면 event_helper를 사용하는 것을 권장한다
+
+// 현재 live와 die는 Deprecated(더이상 사용되지 않는)되었다
+  $('#btn1').live(clickHandler);
+
+  $('#btn2').live(function(e){
+    $('#btn1').die('click',clickHandler);
+  });
+
+  $('#btn3').live(function(e){
+    $('#btn1').trigger('click',clickHandler);
+  });
+
+
+
+
+
+</script>
+  </body>
+</html>
